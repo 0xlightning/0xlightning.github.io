@@ -49,7 +49,7 @@ Operating System :
 <a href="https://parrotsec.org/" target="_blank"> <img src="https://avatars.githubusercontent.com/u/8180780?s=200&v=4" alt="Parrot OS" width="40" height="40"/> </a>
 <a href="https://ubuntu.com/" target="_blank"> <img src="https://avatars.githubusercontent.com/u/4604537?s=200&v=4" alt="Ubuntu OS" width="40" height="40"/> </a>
 </p>
-<BR>
+
 ### 📈 Start:
 ***
 <table align="center" width="100%">
