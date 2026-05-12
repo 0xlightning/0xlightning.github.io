@@ -71,6 +71,11 @@
 </head>
 <body class="min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
 
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-500 text-white px-4 py-2 rounded-md z-50">
+        Skip to content
+    </a>
+
     <!-- Header Banner -->
     <header class="w-full">
         <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,100:26A69A&height=130&section=header&text=0xlightning&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=K%20S%20Praveen%20%C2%B7%20Full-Stack%20%2B%20Hardware%20Builder%20%C2%B7%20AI-First%20Dev&descAlignY=60&descSize=15"
@@ -78,7 +83,7 @@
              class="w-full">
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+    <main id="main-content" class="max-w-4xl mx-auto px-6 py-12 space-y-16">
 
         <!-- Intro & Socials -->
         <section class="text-center space-y-6">
@@ -198,14 +203,25 @@
 
         <!-- Hardware Integration -->
         <section class="section-card p-8 fade-in delay-4">
-            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span>🔩</span> Hardware × Software Integration
-            </h2>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold flex items-center gap-3">
+                    <span>🔩</span> Hardware × Software Integration
+                </h2>
+                <button
+                    onclick="copyDiagram()"
+                    id="copy-btn"
+                    class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-cyan-400 px-3 py-1.5 rounded-md transition-all flex items-center gap-2 border border-slate-700"
+                    aria-label="Copy architecture diagram"
+                >
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
             <p class="text-slate-400 mb-6 italic">
                 I build connected systems where the physical world talks to the web — from sensor data to live dashboards, all automated.
             </p>
-            <div class="bg-slate-900 rounded-lg p-6 overflow-x-auto">
-                <pre class="text-cyan-400 text-sm md:text-base">
+            <div class="bg-slate-900 rounded-lg p-6 overflow-x-auto relative group">
+                <pre id="hardware-diagram" class="text-cyan-400 text-sm md:text-base">
 [ Sensors / Actuators / IoT Devices ]
           ↓ (Firmware)
 [ Arduino / ESP32 / Raspberry Pi ]
@@ -322,5 +338,22 @@
              alt="Footer banner" class="w-full">
     </footer>
 
+    <script>
+        function copyDiagram() {
+            const diagram = document.getElementById('hardware-diagram').innerText;
+            const btn = document.getElementById('copy-btn');
+            const originalContent = btn.innerHTML;
+
+            navigator.clipboard.writeText(diagram).then(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check text-green-400"></i> <span class="text-green-400">Copied!</span>';
+                btn.classList.add('border-green-500/50');
+
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('border-green-500/50');
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
