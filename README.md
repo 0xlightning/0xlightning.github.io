@@ -122,10 +122,10 @@ Combined with AI-accelerated prototyping, IoT MVPs that used to take weeks now s
 I'm part of [**CTF-Players**](https://github.com/0xlightning/CTF-Players), a team dedicated to solving Capture The Flag challenges and documenting writeups.
 
 **Featured Writeups:**
-- 🛡️ **DAM CTF** · [View Writeups](https://github.com/0xlightning/CTF-Players/tree/master/2020/DAMCTF)
-- 🛡️ **DARK CTF** · [View Writeups](https://github.com/0xlightning/CTF-Players/tree/master/2020/DARKCTF)
-- 🛡️ **DownUnder CTF** · [View Writeups](https://github.com/0xlightning/CTF-Players/tree/master/2020/DownUnderCTF)
-- 🛡️ **Syskron Security CTF** · [View Writeups](https://github.com/0xlightning/CTF-Players/tree/master/2020/Syskron%20Security%20CTF)
+- 🛡️ **DAM CTF** · [View Writeups](https://0xlightning.github.io/CTF-Players/2020/DAMCTF)
+- 🛡️ **DARK CTF** · [View Writeups](https://0xlightning.github.io/CTF-Players/2020/DARKCTF)
+- 🛡️ **DownUnder CTF** · [View Writeups](https://0xlightning.github.io/CTF-Players/2020/DownUnderCTF)
+- 🛡️ **Syskron Security CTF** · [View Writeups](https://0xlightning.github.io/CTF-Players/2020/Syskron%20Security%20CTF)
 
 ---
 
