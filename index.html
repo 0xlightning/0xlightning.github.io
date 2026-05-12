@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K S PRAVEEN | Full-Stack & Hardware Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00D9FF 0%, #26A69A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            border-radius: 1rem;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            border-color: #00D9FF;
+            transform: translateY(-2px);
+        }
+
+        pre {
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00D9FF;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
+
+    <!-- Header Banner -->
+    <header class="w-full">
+        <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,100:26A69A&height=130&section=header&text=0xlightning&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=K%20S%20Praveen%20%C2%B7%20Full-Stack%20%2B%20Hardware%20Builder%20%C2%B7%20AI-First%20Dev&descAlignY=60&descSize=15"
+             alt="Header banner with name 0xlightning, K S Praveen - Full-Stack + Hardware Builder - AI-First Dev"
+             class="w-full">
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+
+        <!-- Intro & Socials -->
+        <section class="text-center space-y-6">
+            <div class="flex justify-center">
+                <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Full-Stack+SaaS+Developer;Hardware+%2B+Web+%2B+App+Builder;AI-Accelerated+Workflow+Engineer;eCommerce+%26+Automation+Architect"
+                     alt="Animated typing text showing: Full-Stack SaaS Developer, Hardware + Web + App Builder, AI-Accelerated Workflow Engineer, eCommerce & Automation Architect">
+            </div>
+
+            <div class="flex justify-center gap-4">
+                <a href="https://twitter.com/0xlightning" class="hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=x&logoColor=white" alt="X badge">
+                </a>
+                <a href="https://linkedin.com/in/kspraveen20/" class="hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn badge">
+                </a>
+                <a href="https://t.me/0xlightning" class="hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/Telegram-00D9FF?style=for-the-badge&logo=telegram&logoColor=000" alt="Telegram badge">
+                </a>
+                <a href="https://www.instagram.com/lightningxzer0/" class="hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram badge">
+                </a>
+            </div>
+
+            <div class="flex justify-center">
+                <img src="https://komarev.com/ghpvc/?username=0xlightning&label=Profile+Views&color=00D9FF&style=flat" alt="Profile views counter">
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section class="section-card p-8 fade-in delay-1">
+            <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                <span>👋</span> About Me
+            </h2>
+            <p class="text-slate-300 leading-relaxed text-lg">
+                I'm a <span class="text-cyan-400 font-semibold">full-stack developer and hardware builder</span> based in Coimbatore, India — architecting systems that live both in the cloud and in the physical world.
+            </p>
+            <p class="mt-4 text-slate-400">
+                Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and hardware-integrated projects. My edge is combining AI-accelerated development with software architecture and embedded hardware.
+            </p>
+            <blockquote class="mt-6 border-l-4 border-cyan-500 pl-4 italic text-slate-300">
+                "Chasing the top spot — one build at a time. ⚡"
+            </blockquote>
+        </section>
+
+        <!-- What I'm Working On -->
+        <section class="fade-in delay-2">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span>🚀</span> What I'm Working On
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="section-card p-4 flex items-center gap-4">
+                    <span class="text-2xl">🔭</span>
+                    <div>
+                        <h3 class="font-bold">Shipping</h3>
+                        <p class="text-sm text-slate-400">MERN + Next.js SaaS & eCommerce</p>
+                    </div>
+                </div>
+                <div class="section-card p-4 flex items-center gap-4">
+                    <span class="text-2xl">🤖</span>
+                    <div>
+                        <h3 class="font-bold">AI Workflow</h3>
+                        <p class="text-sm text-slate-400">Claude Code · Ollama · Replit</p>
+                    </div>
+                </div>
+                <div class="section-card p-4 flex items-center gap-4">
+                    <span class="text-2xl">🛒</span>
+                    <div>
+                        <h3 class="font-bold">eCommerce</h3>
+                        <p class="text-sm text-slate-400">Shopify · WhatsApp Automation</p>
+                    </div>
+                </div>
+                <div class="section-card p-4 flex items-center gap-4">
+                    <span class="text-2xl">🔌</span>
+                    <div>
+                        <h3 class="font-bold">Hardware</h3>
+                        <p class="text-sm text-slate-400">Arduino · ESP32 · MQTT</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="fade-in delay-3">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span>🧰</span> Tech Stack
+            </h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Frontend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs" alt="Next.js">
+                        <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=000" alt="React">
+                        <img src="https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwind-css&logoColor=fff" alt="Tailwind CSS">
+                        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" alt="JavaScript">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Backend & Database</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=fff" alt="Node.js">
+                        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=000" alt="Firebase">
+                        <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=fff" alt="MongoDB">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Hardware & Embedded</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=fff" alt="Arduino">
+                        <img src="https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=fff" alt="ESP32">
+                        <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=fff" alt="Raspberry Pi">
+                        <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=fff" alt="C++">
+                        <img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=eclipse-mosquitto&logoColor=fff" alt="MQTT">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware Integration -->
+        <section class="section-card p-8 fade-in delay-4">
+            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                <span>🔩</span> Hardware × Software Integration
+            </h2>
+            <p class="text-slate-400 mb-6 italic">
+                I build connected systems where the physical world talks to the web — from sensor data to live dashboards, all automated.
+            </p>
+            <div class="bg-slate-900 rounded-lg p-6 overflow-x-auto">
+                <pre class="text-cyan-400 text-sm md:text-base">
+[ Sensors / Actuators / IoT Devices ]
+          ↓ (Firmware)
+[ Arduino / ESP32 / Raspberry Pi ]
+          ↓ (Serial / MQTT / HTTP)
+[ Node.js / Firebase Backend API ]
+          ↓ (WebSocket / REST)
+[ React / Next.js Dashboard ] ←→ [ Mobile App / CRM / Shopify ]
+                </pre>
+            </div>
+            <ul class="mt-8 space-y-3 text-slate-300">
+                <li class="flex items-start gap-2">
+                    <span class="text-cyan-500">•</span>
+                    Wrote embedded C++ firmware for sensor data collection
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-cyan-500">•</span>
+                    Set up MQTT brokers to stream real-time data from hardware to cloud
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-cyan-500">•</span>
+                    Built full-stack dashboards with predictive analytics
+                </li>
+            </ul>
+        </section>
+
+        <!-- Cybersecurity & CTFs -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span>🚩</span> Cybersecurity & CTFs
+            </h2>
+            <div class="section-card p-8 space-y-6">
+                <blockquote class="italic text-slate-400 border-l-4 border-cyan-500 pl-4">
+                    "We are just noobs. We would like to do something stupid then you thought. Please help us to reach the top spot one day."
+                </blockquote>
+                <p class="text-slate-300">
+                    I'm part of <a href="https://github.com/0xlightning/CTF-Players" class="text-cyan-400 font-bold hover:underline">CTF-Players</a>, a team dedicated to solving Capture The Flag challenges.
+                    Explore our live writeups at <a href="https://0xlightning.github.io/CTF-Players/" class="text-cyan-400 hover:underline">0xlightning.github.io/CTF-Players</a>.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="https://0xlightning.github.io/CTF-Players/2020/DAMCTF" class="block p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-cyan-400">🛡️ DAM CTF</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Live Writeup</p>
+                    </a>
+                    <a href="https://0xlightning.github.io/CTF-Players/2020/DARKCTF" class="block p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-cyan-400">🛡️ DARK CTF</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Live Writeup</p>
+                    </a>
+                    <a href="https://0xlightning.github.io/CTF-Players/2020/DownUnderCTF" class="block p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-cyan-400">🛡️ DownUnder CTF</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Live Writeup</p>
+                    </a>
+                    <a href="https://0xlightning.github.io/CTF-Players/2020/Syskron%20Security%20CTF" class="block p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors group">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-cyan-400">🛡️ Syskron CTF</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyan-400 transition-colors"></i>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1">Live Writeup</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="section-card p-6">
+                <h3 class="text-xl font-bold mb-4">📊 GitHub Stats</h3>
+                <img src="https://github-readme-streak-stats.herokuapp.com?user=0xlightning&theme=tokyonight&hide_border=true&stroke=00D9FF"
+                     alt="GitHub Streak Stats" class="w-full">
+            </div>
+            <div class="section-card p-6">
+                <h3 class="text-xl font-bold mb-4">📈 Activity</h3>
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=0xlightning&theme=tokyo-night&hide_border=true&color=00D9FF&line=26A69A&point=ffffff"
+                     alt="GitHub Contribution Activity Graph" class="w-full">
+            </div>
+        </section>
+
+        <!-- Organizations -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 flex justify-center gap-3">
+                <span>🏢</span> Organizations
+            </h2>
+            <div class="flex justify-center gap-12">
+                <a href="https://github.com/Kithackclub" class="text-center group">
+                    <img src="https://avatars.githubusercontent.com/u/75631289?s=400&v=4"
+                         alt="Kithackclub logo" class="w-20 h-20 rounded-full border-2 border-transparent group-hover:border-cyan-400 transition-all">
+                    <p class="mt-2 text-sm font-bold">Kithackclub</p>
+                </a>
+                <a href="https://github.com/EddieHubCommunity" class="text-center group">
+                    <img src="https://avatars3.githubusercontent.com/u/66388388?s=150&v=4"
+                         alt="EddieHub logo" class="w-20 h-20 rounded-full border-2 border-transparent group-hover:border-cyan-400 transition-all">
+                    <p class="mt-2 text-sm font-bold">EddieHub</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full mt-20">
+        <div class="flex justify-center mb-12">
+            <a href="https://holopin.io/@0xlightning">
+                <img src="https://holopin.io/api/user/board?user=0xlightning" alt="Holopin board">
+            </a>
+        </div>
+        <img src="https://capsule-render.vercel.app/api?type=waving&color=0:26A69A,100:00D9FF&height=90&section=footer"
+             alt="Footer banner" class="w-full">
+    </footer>
+
+</body>
+</html>
