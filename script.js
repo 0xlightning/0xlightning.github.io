@@ -56,3 +56,54 @@ const timelineObserver = new IntersectionObserver((entries) => {
 timelineEntries.forEach(entry => {
     timelineObserver.observe(entry);
 });
+
+// Skills Filtering Logic
+const filterButtons = document.querySelectorAll('.filter-btn');
+const skillCards = document.querySelectorAll('.skill-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.getAttribute('data-filter');
+
+        skillCards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.classList.remove('hidden');
+                }, 10);
+            } else {
+                card.classList.add('hidden');
+                setTimeout(() => {
+                    if (card.classList.contains('hidden')) {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+    });
+});
+
+// GSAP Animation for Skills Grid
+if (typeof gsap !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Initial entry animation
+    gsap.to(".skill-card", {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: {
+            amount: 0.8
+        },
+        scrollTrigger: {
+            trigger: ".skills-grid",
+            start: "top 90%",
+            toggleActions: "play none none none"
+        }
+    });
+}

@@ -392,6 +392,122 @@ section {
     }
 }
 
+/* Skills Section */
+.skill-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: none;
+    border: 1px solid var(--bg3);
+    color: var(--muted);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    min-height: 200px;
+}
+
+.skill-card {
+    background-color: var(--bg2);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, scale 0.3s ease;
+    opacity: 0; /* Initial state for GSAP */
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    background-color: var(--bg3);
+}
+
+.skill-card.hidden {
+    opacity: 0;
+    scale: 0.8;
+    pointer-events: none;
+    display: none;
+}
+
+.piece-symbol {
+    font-size: 36px;
+    color: var(--cyan);
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover .piece-symbol {
+    color: #5ce6ff;
+}
+
+.skill-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.skill-cat {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+/* Tooltip */
+.skill-card[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: var(--cyan);
+    color: var(--bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.skill-card:hover[data-tooltip]::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .alias { font-size: 32px; }
