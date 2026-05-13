@@ -109,11 +109,27 @@ body {
 section {
     position: relative;
     min-height: 100vh;
-    padding: 80px 24px;
+    padding: 100px 24px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: var(--muted);
 }
 
 /* Hero Section */
@@ -275,6 +291,105 @@ section {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-5px); }
     60% { transform: translateY(-3px); }
+}
+
+/* Timeline Section */
+#timeline {
+    gap: 40px;
+}
+
+.timeline-entry {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: all 0.6s ease-out;
+}
+
+.timeline-entry.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.move-notation {
+    width: 100px;
+    font-size: 64px;
+    font-weight: bold;
+    color: var(--muted);
+    opacity: 0.3;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.timeline-card {
+    flex: 1;
+    background-color: var(--bg2);
+    border-left: 3px solid var(--cyan);
+    padding: 24px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--bg3);
+}
+
+.timeline-card .period {
+    font-size: 12px;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.timeline-card h3 {
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.timeline-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.skills-unlocked {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.skills-unlocked label {
+    color: var(--text);
+    margin-right: 4px;
+}
+
+.skill-badge {
+    padding: 2px 8px;
+    background-color: var(--bg3);
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .timeline-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .move-notation {
+        width: auto;
+        text-align: left;
+        font-size: 48px;
+    }
 }
 
 /* Responsive adjustments */

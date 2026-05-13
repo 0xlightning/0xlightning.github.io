@@ -42,3 +42,17 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+// Animate timeline entries on scroll
+const timelineEntries = document.querySelectorAll('.timeline-entry');
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+timelineEntries.forEach(entry => {
+    timelineObserver.observe(entry);
+});
