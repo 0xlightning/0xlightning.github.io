@@ -514,6 +514,162 @@ section {
     .fullname { font-size: 18px; }
 }
 
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.project-card {
+    height: 320px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.project-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: var(--bg2);
+    border: 1px solid var(--bg3);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Mini Board Thumbnail */
+.mini-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+}
+
+.m-sq {
+    width: 20px;
+    height: 20px;
+}
+
+.m-sq:nth-child(even) { background-color: rgba(0, 217, 255, 0.2); }
+.m-sq:nth-child(odd) { background-color: rgba(0, 217, 255, 0.05); }
+
+/* Ensure checkerboard pattern */
+.mini-board div:nth-child(n+1):nth-child(-n+4):nth-child(even),
+.mini-board div:nth-child(n+9):nth-child(-n+12):nth-child(even),
+.mini-board div:nth-child(n+5):nth-child(-n+8):nth-child(odd),
+.mini-board div:nth-child(n+13):nth-child(-n+16):nth-child(odd) {
+    background-color: rgba(0, 217, 255, 0.2);
+}
+
+.mini-board div:nth-child(n+1):nth-child(-n+4):nth-child(odd),
+.mini-board div:nth-child(n+9):nth-child(-n+12):nth-child(odd),
+.mini-board div:nth-child(n+5):nth-child(-n+8):nth-child(even),
+.mini-board div:nth-child(n+13):nth-child(-n+16):nth-child(even) {
+    background-color: rgba(0, 217, 255, 0.05);
+}
+
+.project-name {
+    font-size: 16px;
+    color: var(--cyan);
+    margin-bottom: 8px;
+}
+
+.project-type {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+.flip-hint {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    background-color: var(--bg3);
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.project-link {
+    font-size: 13px;
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.check-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--cyan);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Helper Classes */
 .cyan { color: var(--cyan); }
 .teal { color: var(--teal); }

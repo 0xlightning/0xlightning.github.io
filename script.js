@@ -87,6 +87,15 @@ filterButtons.forEach(button => {
     });
 });
 
+// Project Card Flip Logic
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+
 // GSAP Animation for Skills Grid
 if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
