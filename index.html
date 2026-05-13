@@ -6,6 +6,7 @@
     <title>K S PRAVEEN | Full-Stack & Hardware Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
 
@@ -53,20 +54,11 @@
             background: #00D9FF;
         }
 
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
+        /* We will use Motion for animations, but keeping basic classes for noscript or initial state */
+        .motion-hidden {
             opacity: 0;
+            transform: translateY(20px);
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
@@ -86,13 +78,13 @@
     <main id="main-content" class="max-w-4xl mx-auto px-6 py-12 space-y-16">
 
         <!-- Intro & Socials -->
-        <section class="text-center space-y-6">
+        <section id="intro" class="text-center space-y-6 motion-hidden">
             <div class="flex justify-center">
                 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Full-Stack+SaaS+Developer;Hardware+%2B+Web+%2B+App+Builder;AI-Accelerated+Workflow+Engineer;eCommerce+%26+Automation+Architect"
                      alt="Animated typing text showing: Full-Stack SaaS Developer, Hardware + Web + App Builder, AI-Accelerated Workflow Engineer, eCommerce & Automation Architect">
             </div>
 
-            <div class="flex justify-center gap-4">
+            <div id="social-links" class="flex justify-center gap-4">
                 <a href="https://twitter.com/0xlightning" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transition-transform" aria-label="Follow me on X (formerly Twitter)">
                     <img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=x&logoColor=white" alt="X badge">
                 </a>
@@ -113,7 +105,7 @@
         </section>
 
         <!-- About Me -->
-        <section class="section-card p-8 fade-in delay-1">
+        <section class="section-card p-8 motion-hidden">
             <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                 <span>👋</span> About Me
             </h2>
@@ -129,33 +121,33 @@
         </section>
 
         <!-- What I'm Working On -->
-        <section class="fade-in delay-2">
+        <section class="motion-hidden">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
                 <span>🚀</span> What I'm Working On
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="section-card p-4 flex items-center gap-4">
+            <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="section-card p-4 flex items-center gap-4 motion-hidden">
                     <span class="text-2xl">🔭</span>
                     <div>
                         <h3 class="font-bold">Shipping</h3>
                         <p class="text-sm text-slate-400">MERN + Next.js SaaS & eCommerce</p>
                     </div>
                 </div>
-                <div class="section-card p-4 flex items-center gap-4">
+                <div class="section-card p-4 flex items-center gap-4 motion-hidden">
                     <span class="text-2xl">🤖</span>
                     <div>
                         <h3 class="font-bold">AI Workflow</h3>
                         <p class="text-sm text-slate-400">Claude Code · Ollama · Replit</p>
                     </div>
                 </div>
-                <div class="section-card p-4 flex items-center gap-4">
+                <div class="section-card p-4 flex items-center gap-4 motion-hidden">
                     <span class="text-2xl">🛒</span>
                     <div>
                         <h3 class="font-bold">eCommerce</h3>
                         <p class="text-sm text-slate-400">Shopify · WhatsApp Automation</p>
                     </div>
                 </div>
-                <div class="section-card p-4 flex items-center gap-4">
+                <div class="section-card p-4 flex items-center gap-4 motion-hidden">
                     <span class="text-2xl">🔌</span>
                     <div>
                         <h3 class="font-bold">Hardware</h3>
@@ -166,12 +158,12 @@
         </section>
 
         <!-- Tech Stack -->
-        <section class="fade-in delay-3">
+        <section class="motion-hidden">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
                 <span>🧰</span> Tech Stack
             </h2>
-            <div class="space-y-8">
-                <div>
+            <div id="tech-stack-container" class="space-y-8">
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">Frontend</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Next.js-000?style=flat-square&logo=nextdotjs" alt="Next.js">
@@ -180,7 +172,7 @@
                         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000" alt="JavaScript">
                     </div>
                 </div>
-                <div>
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">Backend & Database</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=fff" alt="Node.js">
@@ -188,7 +180,7 @@
                         <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=fff" alt="MongoDB">
                     </div>
                 </div>
-                <div>
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">Hardware & Embedded</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=fff" alt="Arduino">
@@ -196,7 +188,7 @@
                         <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=fff" alt="C++">
                     </div>
                 </div>
-                <div>
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">AI & Automation</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Claude_Code-D97706?style=flat-square&logo=anthropic" alt="Claude Code">
@@ -205,7 +197,7 @@
                         <img src="https://img.shields.io/badge/Lovable_AI-FF6B9D?style=flat-square" alt="Lovable AI">
                     </div>
                 </div>
-                <div>
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">eCommerce & CRM</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Shopify-96BF48?style=flat-square&logo=shopify&logoColor=000" alt="Shopify">
@@ -213,7 +205,7 @@
                         <img src="https://img.shields.io/badge/Wati_%28WhatsApp%29-25D366?style=flat-square&logo=whatsapp" alt="Wati (WhatsApp)">
                     </div>
                 </div>
-                <div>
+                <div class="opacity-0 -translate-x-4">
                     <h3 class="text-xl font-semibold mb-4 text-cyan-400">No Code / Low Code</h3>
                     <div class="flex flex-wrap gap-2">
                         <img src="https://img.shields.io/badge/Webflow-4353FF?style=flat-square&logo=webflow" alt="Webflow">
@@ -224,7 +216,7 @@
         </section>
 
         <!-- Hardware Integration -->
-        <section class="section-card p-8 fade-in delay-4">
+        <section class="section-card p-8 motion-hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-3xl font-bold flex items-center gap-3">
                     <span>🔩</span> Hardware × Software Integration
@@ -270,7 +262,7 @@
         </section>
 
         <!-- Cybersecurity & CTFs -->
-        <section class="fade-in delay-4">
+        <section class="motion-hidden">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
                 <span>🚩</span> Cybersecurity & CTFs
             </h2>
@@ -320,7 +312,7 @@
         </section>
 
         <!-- Stats -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in delay-4">
+        <section id="stats-section" class="grid grid-cols-1 md:grid-cols-2 gap-8 motion-hidden">
             <div class="section-card p-6">
                 <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
                     <span>📊</span> GitHub Stats
@@ -338,7 +330,7 @@
         </section>
 
         <!-- Organizations -->
-        <section class="fade-in delay-4">
+        <section class="motion-hidden">
             <h2 class="text-3xl font-bold mb-8 flex justify-center gap-3">
                 <span>🏢</span> Organizations
             </h2>
@@ -358,7 +350,7 @@
 
     </main>
 
-    <footer class="w-full mt-20 fade-in delay-4">
+    <footer class="w-full mt-20 motion-hidden">
         <div class="flex justify-center mb-12 px-6">
             <a href="https://holopin.io/@0xlightning" target="_blank" rel="noopener noreferrer" class="hover:scale-[1.02] transition-transform">
                 <img src="https://holopin.io/api/user/board?user=0xlightning" alt="Holopin board - Digital badges and achievements" class="max-w-full">
@@ -369,6 +361,66 @@
     </footer>
 
     <script>
+        // Initialize Motion
+        const { animate, inView, stagger } = Motion;
+
+        // Intro animation
+        animate("#intro", { opacity: 1, y: 0 }, { duration: 0.8, easing: "ease-out" });
+
+        // Lightning Glow Animation for the Name in the header
+        // Since it's inside an <img> (capsule-render), we can't easily animate the text inside.
+        // Let's animate the main container for a "power up" effect.
+        animate("header", { filter: ["brightness(1)", "brightness(1.2)", "brightness(1)"] }, {
+            duration: 2,
+            repeat: Infinity,
+            easing: "ease-in-out"
+        });
+
+        // Social links stagger
+        animate("#social-links a", { opacity: [0, 1], y: [10, 0] }, {
+            delay: stagger(0.1, { start: 0.4 }),
+            duration: 0.5
+        });
+
+        // Scroll animations for sections
+        inView(".motion-hidden", ({ target }) => {
+            animate(target, { opacity: 1, y: 0 }, { duration: 0.8, easing: "ease-out" });
+        });
+
+        // Stagger work grid items when section is in view
+        inView("#work-grid", () => {
+            animate("#work-grid .section-card", { opacity: 1, y: 0 }, {
+                delay: stagger(0.1),
+                duration: 0.6
+            });
+        });
+
+        // Advanced Hover Animations for all section cards
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                animate(card, {
+                    scale: 1.02,
+                    boxShadow: "0 10px 30px -10px rgba(0, 217, 255, 0.3)",
+                    borderColor: "#00D9FF"
+                }, { duration: 0.3 });
+            });
+            card.addEventListener('mouseleave', () => {
+                animate(card, {
+                    scale: 1,
+                    boxShadow: "0 0px 0px 0px rgba(0, 0, 0, 0)",
+                    borderColor: "rgba(51, 65, 85, 0.5)"
+                }, { duration: 0.3 });
+            });
+        });
+
+        // Staggered reveal for Tech Stack items
+        inView("#tech-stack-container", () => {
+            animate("#tech-stack-container > div", { opacity: 1, x: 0 }, {
+                delay: stagger(0.1),
+                duration: 0.5
+            });
+        });
+
         function copyDiagram() {
             const diagram = document.getElementById('hardware-diagram').innerText;
             const btn = document.getElementById('copy-btn');
