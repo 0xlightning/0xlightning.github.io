@@ -1,0 +1,121 @@
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --cyan: #00D9FF;
+    --teal: #26A69A;
+    --chess-light: #f0d9b5;
+    --chess-dark: #b58863;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --nav-height: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Fira Code', monospace;
+    line-height: 1.6;
+}
+
+/* Navigation */
+#nav {
+    position: sticky;
+    top: 0;
+    height: var(--nav-height);
+    background-color: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--bg3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cyan);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--cyan);
+}
+
+/* Mobile Nav */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background-color: var(--bg2);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease;
+    }
+
+    .nav-links.show {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Base Section Styles */
+section {
+    min-height: 100vh;
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Helper Classes */
+.cyan { color: var(--cyan); }
+.teal { color: var(--teal); }
+.muted { color: var(--muted); }
