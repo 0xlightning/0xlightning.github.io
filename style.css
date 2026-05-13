@@ -808,6 +808,139 @@ section {
     }
 }
 
+/* Contact Section */
+#contact {
+    text-align: center;
+    gap: 50px;
+    padding-bottom: 120px;
+}
+
+.contact-header {
+    margin-bottom: 20px;
+}
+
+.result {
+    font-size: 72px;
+    font-weight: bold;
+    color: var(--muted);
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.contact-header h2 {
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background-color: var(--bg2);
+    border: 1px solid var(--bg3);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+    background-color: var(--bg3);
+}
+
+.contact-icon {
+    font-size: 28px;
+    color: var(--cyan);
+}
+
+.contact-card h4 {
+    font-size: 16px;
+    color: var(--text);
+}
+
+.contact-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.community-row {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 20px;
+}
+
+.community-row a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.community-row a:hover {
+    color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+/* Footer */
+#footer {
+    background-color: var(--bg2);
+    border-top: 0.5px solid var(--bg3);
+    padding: 40px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.animated-footer-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--bg), var(--cyan), var(--teal), var(--bg));
+    background-size: 200%;
+    animation: borderSlide 3s linear infinite;
+}
+
+@keyframes borderSlide {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
 /* Helper Classes */
 .cyan { color: var(--cyan); }
 .teal { color: var(--teal); }
