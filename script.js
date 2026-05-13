@@ -1,5 +1,15 @@
 console.log("0xlightning portfolio loaded ⚡");
 
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // Page Loader
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -11,12 +21,24 @@ window.addEventListener('load', () => {
     }, 1200);
 });
 
-// Scroll Progress Bar
+// Scroll Effects (Progress Bar & Nav background)
 window.addEventListener('scroll', () => {
     const scrollProgress = document.getElementById('scroll-progress');
-    const scrollTotal = document.body.offsetHeight - window.innerHeight;
+    const nav = document.getElementById('nav');
+
+    // Progress bar
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
     const progress = (window.scrollY / scrollTotal) * 100;
-    scrollProgress.style.width = progress + '%';
+    if (scrollProgress) scrollProgress.style.width = progress + '%';
+
+    // Nav background shift
+    if (nav) {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    }
 });
 
 // Hamburger menu toggle
@@ -156,7 +178,28 @@ if (typeof gsap !== 'undefined') {
         }
     });
 
-    // Contact cards
+    // About Section
+    gsap.from(".about-visual", {
+        x: -50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 70%"
+        }
+    });
+
+    gsap.from(".about-text", {
+        x: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#about",
+            start: "top 70%"
+        }
+    });
+
+    // Contact Section
     gsap.from(".contact-card", {
         y: 30,
         opacity: 0,
@@ -167,4 +210,35 @@ if (typeof gsap !== 'undefined') {
             start: "top 75%"
         }
     });
+
+    gsap.from(".result", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%"
+        }
+    });
+
+    // Hero Floating Animations
+    gsap.to(".floating", {
+        y: 20,
+        x: 10,
+        rotation: 5,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: 0.5
+    });
+
+    // Hero Text Reveal
+    const heroTl = gsap.timeline();
+    heroTl.from(".hero-badge", { opacity: 0, y: 10, duration: 0.5, delay: 1.5 })
+          .from(".hero-title", { opacity: 0, y: 20, duration: 0.8 }, "-=0.3")
+          .from(".hero-subtitle", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
+          .from(".hero-cta", { opacity: 0, y: 20, duration: 0.8 }, "-=0.5")
+          .from(".social-links-hero", { opacity: 0, duration: 0.5 }, "-=0.3")
+          .from(".hero-visual", { opacity: 0, scale: 0.9, duration: 1, ease: "power2.out" }, "-=0.8");
 }

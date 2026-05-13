@@ -17,11 +17,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -55,98 +58,68 @@
 
     <main>
         <section id="hero">
-            <div class="chess-board">
-                <div class="sq sq-light" style="animation-delay: 0.00s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.03s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.06s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.09s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.12s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.15s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.18s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.21s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.24s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.27s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.30s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.33s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.36s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.39s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.42s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.45s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.48s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.51s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.54s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.57s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.60s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.63s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.66s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.69s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.72s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.75s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.78s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.81s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.84s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.87s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.90s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.93s"></div>
-                <div class="sq sq-light" style="animation-delay: 0.96s"></div>
-                <div class="sq sq-dark" style="animation-delay: 0.99s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.02s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.05s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.08s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.11s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.14s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.17s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.20s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.23s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.26s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.29s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.32s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.35s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.38s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.41s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.44s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.47s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.50s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.53s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.56s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.59s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.62s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.65s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.68s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.71s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.74s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.77s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.80s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.83s"></div>
-                <div class="sq sq-dark" style="animation-delay: 1.86s"></div>
-                <div class="sq sq-light" style="animation-delay: 1.89s"></div>
+            <div class="hero-bg">
+                <div class="chess-piece floating king">♔</div>
+                <div class="chess-piece floating queen">♕</div>
+                <div class="chess-piece floating knight">♘</div>
+                <div class="chess-piece floating bishop">♗</div>
+                <div class="grid-overlay"></div>
             </div>
 
-            <div class="hero-content">
-                <div class="chess-king">♔</div>
-                <h1 class="alias">0xlightning</h1>
-                <p class="fullname">K S Praveen</p>
-                <div class="roles-container">
-                    <div class="roles">
-                        <span>Full-Stack SaaS Developer</span>
-                        <span>Hardware + Web + App Builder</span>
-                        <span>AI-Accelerated Workflow Engineer</span>
-                        <span>eCommerce & Automation Architect</span>
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="hero-badge">Available for hire</span>
+                    <h1 class="hero-title">Building elegant <br> <span class="cyan">digital experiences.</span></h1>
+                    <p class="hero-subtitle">Full-Stack SaaS Developer • Shopify Developer • UI Engineer</p>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">View tactical plays</a>
+                        <a href="#contact" class="btn btn-secondary">Let's talk</a>
+                    </div>
+
+                    <div class="social-links-hero">
+                        <a href="https://twitter.com/0xlightning" target="_blank" rel="noopener noreferrer" aria-label="X">𝕏</a>
+                        <a href="https://linkedin.com/in/kspraveen20/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LN</a>
+                        <a href="https://github.com/0xlightning" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
                     </div>
                 </div>
-                <div class="social-links-hero">
-                    <a href="https://twitter.com/0xlightning" target="_blank" rel="noopener noreferrer">X</a> ·
-                    <a href="https://linkedin.com/in/kspraveen20/" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
-                    <a href="https://t.me/0xlightning" target="_blank" rel="noopener noreferrer">Telegram</a> ·
-                    <a href="https://www.instagram.com/lightningxzer0/" target="_blank" rel="noopener noreferrer">Instagram</a> ·
-                    <a href="https://github.com/0xlightning" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                <div class="hero-visual">
+                    <div class="premium-king-container">
+                        <span class="premium-king">♔</span>
+                        <div class="king-glow"></div>
+                    </div>
                 </div>
-                <p class="scroll-hint">scroll to see the game ↓</p>
             </div>
         </section>
 
         <section id="about">
-            <!-- About content will be added later -->
+            <div class="about-container">
+                <div class="about-visual">
+                    <div class="profile-frame">
+                        <span class="profile-icon">♟</span>
+                        <div class="frame-decor king-decor">♔</div>
+                        <div class="frame-decor queen-decor">♕</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-badge">The Opening</span>
+                    <h2>Strategic builder of digital products.</h2>
+                    <p>I'm K S Praveen (0xlightning), a Full-Stack developer based in India. I specialize in building scalable SaaS products, automated eCommerce pipelines, and hardware-integrated web systems.</p>
+                    <p>My approach is inspired by chess: every move is intentional, every line of code serves a purpose, and I'm always thinking three steps ahead in the architectural game.</p>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-num">2024+</span>
+                            <span class="stat-label">Years Pro</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">Builds Shipped</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="timeline">
@@ -581,8 +554,8 @@
 
     <footer id="footer">
         <div class="footer-content">
-            <p>K S Praveen · 0xlightning · Coimbatore, India</p>
-            <p>Built with Jules AI · Chess-themed portfolio · 2025</p>
+            <p>Designed & developed with precision.</p>
+            <p>K S Praveen · 0xlightning · 2025</p>
         </div>
         <div class="animated-footer-border"></div>
     </footer>
