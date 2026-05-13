@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-king">♔</div>
+            <p>loading...</p>
+        </div>
+    </div>
+
+    <div id="scroll-progress"></div>
 
     <nav id="nav">
         <a href="#hero" class="logo">♟ 0xlightning</a>
@@ -341,17 +349,243 @@
         </section>
 
         <section id="projects">
-            <!-- Projects content will be added later -->
+            <div class="section-header">
+                <h2>Tactical Plays</h2>
+                <p>Selected builds from the board.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="mini-board">
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            </div>
+                            <h3 class="project-name">CTF-Players</h3>
+                            <p class="project-type">Cybersecurity · Open Source</p>
+                            <span class="flip-hint">tap to see more →</span>
+                        </div>
+                        <div class="card-back">
+                            <div class="check-badge">✓</div>
+                            <p class="project-desc">A team dedicated to solving Capture The Flag challenges. Live writeups and solutions for DAM CTF, DARK CTF, DownUnder CTF, and Syskron CTF competitions.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">GitHub Pages</span>
+                                <span class="tech-badge">Markdown</span>
+                                <span class="tech-badge">CTF Tooling</span>
+                                <span class="tech-badge">Team Collaboration</span>
+                            </div>
+                            <a href="https://github.com/0xlightning/CTF-Players" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="mini-board">
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            </div>
+                            <h3 class="project-name">Hardware Dashboard</h3>
+                            <p class="project-type">IoT · Full-Stack · Hardware</p>
+                            <span class="flip-hint">tap to see more →</span>
+                        </div>
+                        <div class="card-back">
+                            <div class="check-badge">✓</div>
+                            <p class="project-desc">ESP32 sensor data collected via C++ firmware, streamed over HTTP to a Node.js + Firebase backend, displayed in a real-time React dashboard with live analytics.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">C++</span>
+                                <span class="tech-badge">ESP32</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Firebase</span>
+                                <span class="tech-badge">React</span>
+                            </div>
+                            <a href="https://github.com/0xlightning" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="mini-board">
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            </div>
+                            <h3 class="project-name">eCommerce Automation</h3>
+                            <p class="project-type">SaaS · Automation · eCommerce</p>
+                            <span class="flip-hint">tap to see more →</span>
+                        </div>
+                        <div class="card-back">
+                            <div class="check-badge">✓</div>
+                            <p class="project-desc">Shopify store integrated with WhatsApp automation via Wati, CRM managed in Zoho, order notifications and customer support fully automated with AI-assisted workflows.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Shopify</span>
+                                <span class="tech-badge">Wati</span>
+                                <span class="tech-badge">Zoho CRM</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">WhatsApp API</span>
+                            </div>
+                            <a href="https://github.com/0xlightning" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="ctf">
-            <!-- CTF content will be added later -->
+            <div class="ctf-container">
+                <!-- PART 1: Hardware × Software -->
+                <div class="hw-sw-section">
+                    <h2 class="ctf-subheading">Hardware × Software</h2>
+
+                    <div class="hw-diagram">
+                        <div class="hw-line"><span class="teal">[</span> Sensors / Actuators / IoT Devices <span class="teal">]</span></div>
+                        <div class="hw-line">          <span class="cyan">↓</span>  Firmware (C++)</div>
+                        <div class="hw-line"><span class="teal">[</span> Arduino / ESP32 <span class="teal">]</span></div>
+                        <div class="hw-line">          <span class="cyan">↓</span>  Serial / HTTP</div>
+                        <div class="hw-line"><span class="teal">[</span> Node.js / Firebase Backend <span class="teal">]</span></div>
+                        <div class="hw-line">          <span class="cyan">↓</span>  WebSocket / REST</div>
+                        <div class="hw-line"><span class="teal">[</span> React / Next.js Dashboard <span class="teal">]</span> <span class="cyan">←→</span> <span class="teal">[</span> Shopify / CRM / WhatsApp <span class="teal">]</span></div>
+                    </div>
+
+                    <ul class="hw-bullets">
+                        <li>Wrote embedded C++ firmware for sensor data collection</li>
+                        <li>Built hardware-integrated systems with ESP32 & Arduino</li>
+                        <li>Built full-stack dashboards with real-time sensor analytics</li>
+                    </ul>
+                </div>
+
+                <hr class="ctf-divider">
+
+                <!-- PART 2: Cybersecurity & CTFs -->
+                <div class="cyber-ctf-section">
+                    <h2 class="ctf-subheading">CTF · Capture The Flag</h2>
+
+                    <blockquote class="ctf-quote">
+                        "We are just noobs. We would like to do something stupid<br>
+                        than you thought. Please help us to reach the top spot one day."
+                        <cite>— CTF-Players team</cite>
+                    </blockquote>
+
+                    <div class="ctf-grid">
+                        <!-- CTF 1 -->
+                        <a href="https://0xlightning.github.io/CTF-Players/2020/DAMCTF" class="ctf-card" target="_blank" rel="noopener noreferrer">
+                            <div class="ctf-icon">🛡</div>
+                            <div class="ctf-info">
+                                <h4>DAM CTF</h4>
+                                <span class="ctf-year">2020</span>
+                            </div>
+                            <span class="ctf-link-text">View writeup →</span>
+                        </a>
+
+                        <!-- CTF 2 -->
+                        <a href="https://0xlightning.github.io/CTF-Players/2020/DARKCTF" class="ctf-card" target="_blank" rel="noopener noreferrer">
+                            <div class="ctf-icon">🛡</div>
+                            <div class="ctf-info">
+                                <h4>DARK CTF</h4>
+                                <span class="ctf-year">2020</span>
+                            </div>
+                            <span class="ctf-link-text">View writeup →</span>
+                        </a>
+
+                        <!-- CTF 3 -->
+                        <a href="https://0xlightning.github.io/CTF-Players/2020/DownUnderCTF" class="ctf-card" target="_blank" rel="noopener noreferrer">
+                            <div class="ctf-icon">🛡</div>
+                            <div class="ctf-info">
+                                <h4>DownUnder CTF</h4>
+                                <span class="ctf-year">2020</span>
+                            </div>
+                            <span class="ctf-link-text">View writeup →</span>
+                        </a>
+
+                        <!-- CTF 4 -->
+                        <a href="https://0xlightning.github.io/CTF-Players/2020/Syskron%20Security%20CTF" class="ctf-card" target="_blank" rel="noopener noreferrer">
+                            <div class="ctf-icon">🛡</div>
+                            <div class="ctf-info">
+                                <h4>Syskron CTF</h4>
+                                <span class="ctf-year">2020</span>
+                            </div>
+                            <span class="ctf-link-text">View writeup →</span>
+                        </a>
+                    </div>
+
+                    <a href="https://github.com/0xlightning/CTF-Players" class="team-link" target="_blank" rel="noopener noreferrer">
+                        CTF-Players on GitHub →
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
-            <!-- Contact content will be added later -->
+            <div class="contact-header">
+                <div class="result">1-0</div>
+                <h2>Let's build something.</h2>
+                <p>Open to collabs, projects, and interesting problems.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- GitHub -->
+                <a href="https://github.com/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">⚡</div>
+                    <h4>GitHub</h4>
+                    <p>@0xlightning</p>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/kspraveen20/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">♟</div>
+                    <h4>LinkedIn</h4>
+                    <p>K S Praveen</p>
+                </a>
+
+                <!-- X / Twitter -->
+                <a href="https://twitter.com/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">✕</div>
+                    <h4>X / Twitter</h4>
+                    <p>@0xlightning</p>
+                </a>
+
+                <!-- Telegram -->
+                <a href="https://t.me/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">📡</div>
+                    <h4>Telegram</h4>
+                    <p>@0xlightning</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/lightningxzer0/" class="contact-card" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">📸</div>
+                    <h4>Instagram</h4>
+                    <p>@lightningxzer0</p>
+                </a>
+            </div>
+
+            <div class="community-row">
+                <a href="https://github.com/kithackclub" target="_blank" rel="noopener noreferrer">Kithackclub</a> ·
+                <a href="https://github.com/EddieHubCommunity" target="_blank" rel="noopener noreferrer">EddieHub</a> ·
+                <a href="https://github.com/0xlightning/CTF-Players" target="_blank" rel="noopener noreferrer">CTF-Players</a>
+            </div>
         </section>
     </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>K S Praveen · 0xlightning · Coimbatore, India</p>
+            <p>Built with Jules AI · Chess-themed portfolio · 2025</p>
+        </div>
+        <div class="animated-footer-border"></div>
+    </footer>
 
     <!-- JS -->
     <script src="script.js"></script>
