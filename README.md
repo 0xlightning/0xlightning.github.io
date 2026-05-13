@@ -21,7 +21,7 @@
 
 I'm a **full-stack developer and hardware builder** based in **Coimbatore, India** — architecting systems that live both in the cloud and in the physical world.
 
-Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and hardware-integrated projects that bridge microcontrollers (Arduino, ESP32, Raspberry Pi) with live web and mobile interfaces. My edge is combining **AI-accelerated development** with a solid understanding of both software architecture and embedded hardware — so I can prototype end-to-end solutions fast, from sensor data to live dashboard.
+Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and hardware-integrated projects that bridge microcontrollers (Arduino, ESP32) with live web and mobile interfaces. My edge is combining **AI-accelerated development** with a solid understanding of both software architecture and embedded hardware — so I can prototype end-to-end solutions fast, from sensor data to live dashboard.
 
 > *Chasing the top spot — one build at a time.* ⚡
 
@@ -34,7 +34,7 @@ Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and ha
 | 🔭 **Shipping** | Full-stack SaaS & eCommerce platforms with MERN + Next.js |
 | 🤖 **AI Workflow** | Claude Code · Antigravity AI · Replit AI · Lovable AI · Ollama |
 | 🛒 **eCommerce** | Shopify customization · WhatsApp automation (Wati) · Zoho CRM integration |
-| 🔌 **Hardware** | Arduino · ESP32 · Raspberry Pi · sensor-to-web integrations · MQTT protocols |
+| 🔌 **Hardware** | Arduino · ESP32 · sensor-to-web integrations |
 | 🌱 **Exploring** | Agentic AI tools · IoT dashboards · local LLM workflows |
 | 👯 **Open to** | AI-assisted projects · SaaS collab · IoT + web bridges |
 | 💬 **Ask me about** | Next.js · Firebase · Shopify · hardware+web integrations |
@@ -60,9 +60,7 @@ Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and ha
 
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=fff "Arduino")
 ![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=fff "ESP32")
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=fff "Raspberry Pi")
 ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=fff "C++")
-![MQTT](https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=eclipse-mosquitto&logoColor=fff "MQTT")
 
 **AI & Automation**
 
@@ -97,8 +95,8 @@ Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and ha
 ```
 [ Sensors / Actuators / IoT Devices ]
           ↓ (Firmware)
-[ Arduino / ESP32 / Raspberry Pi ]
-          ↓ (Serial / MQTT / HTTP)
+[ Arduino / ESP32 ]
+          ↓ (Serial / HTTP)
 [ Node.js / Firebase Backend API ]
           ↓ (WebSocket / REST)
 [ React / Next.js Dashboard ] ←→ [ Mobile App / CRM / Shopify ]
@@ -106,7 +104,6 @@ Since 2024, I've shipped SaaS dashboards, eCommerce automation platforms, and ha
 
 **Real-world work:**
 - Wrote embedded C++ firmware for sensor data collection
-- Set up MQTT brokers to stream real-time data from hardware to cloud
 - Built full-stack dashboards that display live sensor readings with predictive analytics
 - Integrated hardware outputs (relays, displays) controlled by web interface actions
 - Automated hardware flows with AI decision-making (Claude Code + local LLMs)
