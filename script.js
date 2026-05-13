@@ -115,4 +115,17 @@ if (typeof gsap !== 'undefined') {
             toggleActions: "play none none none"
         }
     });
+
+    // Hardware diagram stagger animation
+    gsap.to(".hw-line", {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.inOut",
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: ".hw-diagram",
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
 }
