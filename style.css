@@ -141,22 +141,29 @@ code, .monospace {
     font-size: 1.5rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: var(--nav-height);
+        top: 70px;
         right: -100%;
-        width: 100%;
-        height: calc(100vh - var(--nav-height));
-        background-color: var(--bg2);
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 40px 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: right 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 24px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: var(--shadow);
+        z-index: 999;
     }
 
     .nav-links.show {
-        right: 0;
+        right: 20px;
     }
 
     .hamburger {
@@ -224,8 +231,9 @@ section {
 
 .chess-piece.floating {
     position: absolute;
-    font-size: clamp(4rem, 15vw, 12rem);
-    color: rgba(0, 0, 0, 0.03);
+    width: clamp(100px, 20vw, 300px);
+    height: auto;
+    opacity: 0.03;
     user-select: none;
     pointer-events: none;
 }
@@ -347,9 +355,9 @@ section {
 }
 
 .premium-king {
-    font-size: 18rem;
-    color: rgba(0, 0, 0, 0.02);
-    line-height: 1;
+    width: 300px;
+    height: auto;
+    opacity: 0.02;
 }
 
 .king-glow {
@@ -406,14 +414,15 @@ section {
 }
 
 .profile-icon {
-    font-size: 8rem;
-    color: rgba(0,0,0,0.05);
+    width: 150px;
+    height: auto;
+    opacity: 0.05;
 }
 
 .frame-decor {
     position: absolute;
-    font-size: 3rem;
-    color: var(--cyan);
+    width: 60px;
+    height: auto;
     opacity: 0.2;
 }
 
@@ -652,7 +661,6 @@ section {
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
-    opacity: 0;
 }
 
 .skill-card:hover {
@@ -789,37 +797,51 @@ section {
     background-color: var(--bg2);
 }
 
-/* Mini Board Thumbnail */
-.mini-board {
+/* Project Thumbnails */
+.project-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: var(--bg2);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-thumb {
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.project-card:hover .project-thumb {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
+}
+
+.mini-board-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 80px;
-    height: 80px;
-    margin-bottom: 24px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.1;
 }
 
 .m-sq {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 
-.m-sq:nth-child(even) { background-color: rgba(0, 217, 255, 0.2); }
-.m-sq:nth-child(odd) { background-color: rgba(0, 217, 255, 0.05); }
-
-/* Ensure checkerboard pattern */
-.mini-board div:nth-child(n+1):nth-child(-n+4):nth-child(even),
-.mini-board div:nth-child(n+9):nth-child(-n+12):nth-child(even),
-.mini-board div:nth-child(n+5):nth-child(-n+8):nth-child(odd),
-.mini-board div:nth-child(n+13):nth-child(-n+16):nth-child(odd) {
-    background-color: rgba(0, 217, 255, 0.2);
-}
-
-.mini-board div:nth-child(n+1):nth-child(-n+4):nth-child(odd),
-.mini-board div:nth-child(n+9):nth-child(-n+12):nth-child(odd),
-.mini-board div:nth-child(n+5):nth-child(-n+8):nth-child(even),
-.mini-board div:nth-child(n+13):nth-child(-n+16):nth-child(even) {
-    background-color: rgba(0, 217, 255, 0.05);
-}
+/* Checkerboard pattern for overlay */
+.mini-board-overlay div:nth-child(even) { background-color: var(--cyan); }
+.mini-board-overlay div:nth-child(odd) { background-color: transparent; }
 
 .project-name {
     font-size: 16px;
@@ -1039,6 +1061,27 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* Ambient Background Pieces */
+#ambient-pieces {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ambient-piece {
+    position: absolute;
+    width: clamp(150px, 25vw, 400px);
+    height: auto;
+    opacity: 0.02;
+    filter: blur(2px);
+}
+
+.p1 { top: 20%; left: -5%; transform: rotate(15deg); }
+.p2 { bottom: 10%; right: -5%; transform: rotate(-10deg); }
+.p3 { top: 60%; left: 80%; transform: rotate(45deg); }
 
 /* Contact Section */
 #contact {

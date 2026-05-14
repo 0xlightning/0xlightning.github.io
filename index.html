@@ -26,6 +26,9 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -43,7 +46,7 @@
         <a href="#hero" class="logo">♟ 0xlightning</a>
 
         <button class="hamburger" aria-label="Toggle navigation">
-            ☰
+            <i data-lucide="menu"></i>
         </button>
 
         <ul class="nav-links">
@@ -57,12 +60,18 @@
     </nav>
 
     <main>
+        <div id="ambient-pieces">
+            <img src="assets/chess/knight.svg" class="ambient-piece p1" alt="">
+            <img src="assets/chess/bishop.svg" class="ambient-piece p2" alt="">
+            <img src="assets/chess/queen.svg" class="ambient-piece p3" alt="">
+        </div>
+
         <section id="hero">
             <div class="hero-bg">
-                <div class="chess-piece floating king">♔</div>
-                <div class="chess-piece floating queen">♕</div>
-                <div class="chess-piece floating knight">♘</div>
-                <div class="chess-piece floating bishop">♗</div>
+                <img src="assets/chess/king.svg" class="chess-piece floating king" alt="">
+                <img src="assets/chess/queen.svg" class="chess-piece floating queen" alt="">
+                <img src="assets/chess/knight.svg" class="chess-piece floating knight" alt="">
+                <img src="assets/chess/bishop.svg" class="chess-piece floating bishop" alt="">
                 <div class="grid-overlay"></div>
             </div>
 
@@ -86,7 +95,7 @@
 
                 <div class="hero-visual">
                     <div class="premium-king-container">
-                        <span class="premium-king">♔</span>
+                        <img src="assets/chess/king.svg" class="premium-king" alt="Chess King">
                         <div class="king-glow"></div>
                     </div>
                 </div>
@@ -97,9 +106,9 @@
             <div class="about-container">
                 <div class="about-visual">
                     <div class="profile-frame">
-                        <span class="profile-icon">♟</span>
-                        <div class="frame-decor king-decor">♔</div>
-                        <div class="frame-decor queen-decor">♕</div>
+                        <img src="assets/chess/pawn.svg" class="profile-icon" alt="Chess Pawn">
+                        <img src="assets/chess/king.svg" class="frame-decor king-decor" alt="">
+                        <img src="assets/chess/queen.svg" class="frame-decor queen-decor" alt="">
                     </div>
                 </div>
                 <div class="about-text">
@@ -332,11 +341,14 @@
                 <div class="project-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="mini-board">
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            <div class="project-image-container">
+                                <img src="assets/projects/cyber.svg" class="project-thumb" alt="Cyber Security">
+                                <div class="mini-board-overlay">
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                </div>
                             </div>
                             <h3 class="project-name">CTF-Players</h3>
                             <p class="project-type">Cybersecurity · Open Source</p>
@@ -360,11 +372,14 @@
                 <div class="project-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="mini-board">
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            <div class="project-image-container">
+                                <img src="assets/projects/hardware.svg" class="project-thumb" alt="Hardware Dashboard">
+                                <div class="mini-board-overlay">
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                </div>
                             </div>
                             <h3 class="project-name">Hardware Dashboard</h3>
                             <p class="project-type">IoT · Full-Stack · Hardware</p>
@@ -389,11 +404,14 @@
                 <div class="project-card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="mini-board">
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
-                                <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                            <div class="project-image-container">
+                                <img src="assets/projects/ecommerce.svg" class="project-thumb" alt="eCommerce Automation">
+                                <div class="mini-board-overlay">
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                    <div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div><div class="m-sq"></div>
+                                </div>
                             </div>
                             <h3 class="project-name">eCommerce Automation</h3>
                             <p class="project-type">SaaS · Automation · eCommerce</p>
@@ -510,35 +528,35 @@
             <div class="contact-grid">
                 <!-- GitHub -->
                 <a href="https://github.com/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">⚡</div>
+                    <div class="contact-icon"><i data-lucide="github"></i></div>
                     <h4>GitHub</h4>
                     <p>@0xlightning</p>
                 </a>
 
                 <!-- LinkedIn -->
                 <a href="https://linkedin.com/in/kspraveen20/" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">♟</div>
+                    <div class="contact-icon"><i data-lucide="linkedin"></i></div>
                     <h4>LinkedIn</h4>
                     <p>K S Praveen</p>
                 </a>
 
                 <!-- X / Twitter -->
                 <a href="https://twitter.com/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">✕</div>
+                    <div class="contact-icon"><i data-lucide="twitter"></i></div>
                     <h4>X / Twitter</h4>
                     <p>@0xlightning</p>
                 </a>
 
                 <!-- Telegram -->
                 <a href="https://t.me/0xlightning" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">📡</div>
+                    <div class="contact-icon"><i data-lucide="send"></i></div>
                     <h4>Telegram</h4>
                     <p>@0xlightning</p>
                 </a>
 
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/lightningxzer0/" class="contact-card" target="_blank" rel="noopener noreferrer">
-                    <div class="contact-icon">📸</div>
+                    <div class="contact-icon"><i data-lucide="instagram"></i></div>
                     <h4>Instagram</h4>
                     <p>@lightningxzer0</p>
                 </a>
@@ -562,5 +580,8 @@
 
     <!-- JS -->
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

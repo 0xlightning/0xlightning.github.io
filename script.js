@@ -141,9 +141,9 @@ if (typeof gsap !== 'undefined') {
     });
 
     // Skills Grid
-    gsap.to(".skill-card", {
-        y: 0,
-        opacity: 1,
+    gsap.from(".skill-card", {
+        y: 30,
+        opacity: 0,
         duration: 0.6,
         ease: "power2.out",
         stagger: { amount: 0.8 },
@@ -227,6 +227,18 @@ if (typeof gsap !== 'undefined') {
         x: 10,
         rotation: 5,
         duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: 0.5
+    });
+
+    // Ambient Pieces Floating
+    gsap.to(".ambient-piece", {
+        y: "random(-40, 40)",
+        x: "random(-20, 20)",
+        rotation: "random(-15, 15)",
+        duration: "random(4, 7)",
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
