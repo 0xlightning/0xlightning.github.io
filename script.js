@@ -199,6 +199,29 @@ if (typeof gsap !== 'undefined') {
         }
     });
 
+    // Strategy Section
+    gsap.from(".gh-stat-badge", {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: ".gh-stats-container",
+            start: "top 85%"
+        }
+    });
+
+    gsap.from(".strategy-card", {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: "#strategy",
+            start: "top 80%"
+        }
+    });
+
     // Contact Section
     gsap.from(".contact-card", {
         y: 30,
