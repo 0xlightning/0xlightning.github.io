@@ -1278,16 +1278,130 @@ section {
     overflow: hidden;
 }
 
-.footer-content {
+.footer-grid {
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    text-align: left;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.brand-pawn {
+    font-size: 1.5rem;
+    color: var(--cyan);
+}
+
+.brand-text {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.footer-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    color: var(--text);
+    opacity: 0.6;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--cyan);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.footer-location {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.05);
     text-align: center;
 }
 
-.footer-content p {
-    font-size: 0.85rem;
+.footer-bottom p {
+    font-size: 0.8rem;
     color: var(--muted);
-    margin-bottom: 8px;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-tagline {
+        margin: 0 auto;
+    }
+
+    .status-indicator {
+        justify-content: center;
+    }
 }
 
 .animated-footer-border {
