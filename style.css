@@ -6,19 +6,69 @@
 }
 
 :root {
-    --bg: #ffffff;
-    --bg2: #f8fafc;
-    --bg3: #f1f5f9;
-    --cyan: #0ea5e9;
-    --teal: #0d9488;
-    --slate: #475569;
-    --chess-light: #f1f5f9;
-    --chess-dark: #cbd5e1;
-    --text: #0f172a;
-    --muted: #64748b;
+    --background: oklch(1 0 0);
+    --background-rgb: 255, 255, 255;
+    --foreground: oklch(0.147 0.004 49.3);
+    --foreground-rgb: 37, 37, 37;
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.147 0.004 49.3);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.147 0.004 49.3);
+    --primary: oklch(0.496 0.265 301.924);
+    --primary-foreground: oklch(0.977 0.014 308.299);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.96 0.002 17.2);
+    --muted-foreground: oklch(0.547 0.021 43.1);
+    --accent: oklch(0.96 0.002 17.2);
+    --accent-foreground: oklch(0.214 0.009 43.1);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0.005 34.3);
+    --input: oklch(0.922 0.005 34.3);
+    --ring: oklch(0.714 0.014 41.2);
+    --radius: 0.625rem;
+
+    /* Mapping to legacy variables for compatibility */
+    --bg: var(--background);
+    --bg2: var(--card);
+    --bg3: var(--secondary);
+    --cyan: var(--primary);
+    --teal: var(--primary); /* Using primary for teal as well or mapping to a chart color? */
+    --text: var(--foreground);
+    --muted-legacy: var(--muted-foreground);
     --nav-height: 80px;
-    --radius: 12px;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+
+    /* Chess Theme */
+    --chess-light: var(--secondary);
+    --chess-dark: oklch(0.8 0.01 300); /* Derived to match new palette */
+}
+
+.dark {
+    --background: oklch(0.147 0.004 49.3);
+    --background-rgb: 37, 37, 37;
+    --foreground: oklch(0.986 0.002 67.8);
+    --foreground-rgb: 251, 251, 251;
+    --card: oklch(0.214 0.009 43.1);
+    --card-foreground: oklch(0.986 0.002 67.8);
+    --popover: oklch(0.214 0.009 43.1);
+    --popover-foreground: oklch(0.986 0.002 67.8);
+    --primary: oklch(0.438 0.218 303.724);
+    --primary-foreground: oklch(0.977 0.014 308.299);
+    --secondary: oklch(0.274 0.006 286.033);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.268 0.011 36.5);
+    --muted-foreground: oklch(0.714 0.014 41.2);
+    --accent: oklch(0.268 0.011 36.5);
+    --accent-foreground: oklch(0.986 0.002 67.8);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.547 0.021 43.1);
+
+    /* Legacy override */
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --chess-dark: oklch(0.3 0.01 300);
 }
 
 html {
@@ -60,7 +110,7 @@ code, .monospace {
     width: 90%;
     max-width: 1200px;
     height: 60px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(var(--background-rgb), 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: flex;
@@ -69,7 +119,7 @@ code, .monospace {
     padding: 0 30px;
     z-index: 1000;
     border-radius: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
 }
@@ -77,7 +127,7 @@ code, .monospace {
 #nav.scrolled {
     top: 10px;
     width: 95%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(var(--background-rgb), 0.9);
 }
 
 .logo {
@@ -91,6 +141,35 @@ code, .monospace {
     letter-spacing: -0.02em;
 }
 
+/* Nav Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.sun-icon { display: none; }
+.moon-icon { display: block; }
+
+.dark .sun-icon { display: block; }
+.dark .moon-icon { display: none; }
+
 .nav-links {
     display: flex;
     gap: 2.5rem;
@@ -98,7 +177,7 @@ code, .monospace {
 }
 
 .nav-links a {
-    color: var(--muted);
+    color: var(--muted-legacy);
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -149,7 +228,7 @@ code, .monospace {
         width: calc(100% - 40px);
         height: auto;
         padding: 40px 0;
-        background-color: rgba(255, 255, 255, 0.98);
+        background-color: rgba(var(--background-rgb), 0.98);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
@@ -157,7 +236,7 @@ code, .monospace {
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         border-radius: 24px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border);
         box-shadow: var(--shadow);
         z-index: 999;
     }
@@ -207,7 +286,7 @@ section {
 
 .section-header p {
     font-size: 1rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -225,7 +304,7 @@ section {
     background-color: var(--bg2);
     padding: 10px;
     border-radius: var(--radius);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
@@ -248,7 +327,7 @@ section {
 
 .strategy-card {
     background-color: var(--bg2);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     padding: 32px;
     border-radius: 24px;
     display: flex;
@@ -278,7 +357,7 @@ section {
 
 .strategy-info p {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     line-height: 1.6;
 }
 
@@ -322,7 +401,7 @@ section {
 .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(var(--foreground-rgb), 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     opacity: 0.5;
 }
@@ -361,7 +440,7 @@ section {
 
 .hero-subtitle {
     font-size: 1.1rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 40px;
     max-width: 500px;
 }
@@ -385,23 +464,23 @@ section {
 
 .btn-primary {
     background-color: var(--text);
-    color: white;
+    color: var(--primary-foreground);
 }
 
 .btn-primary:hover {
-    background-color: #1e293b;
+    background-color: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);
 }
 
 .btn-secondary {
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
     color: var(--text);
 }
 
 .btn-secondary:hover {
     background-color: var(--bg2);
-    border-color: rgba(0,0,0,0.2);
+    border-color: var(--primary);
 }
 
 .social-links-hero {
@@ -410,7 +489,7 @@ section {
 }
 
 .social-links-hero a {
-    color: var(--muted);
+    color: var(--muted-legacy);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.8rem;
@@ -486,7 +565,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
 }
 
 .profile-icon {
@@ -512,7 +591,7 @@ section {
 }
 
 .about-text p {
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 20px;
 }
 
@@ -531,7 +610,7 @@ section {
 
 .stat-label {
     font-size: 0.8rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 @media (max-width: 768px) {
@@ -613,7 +692,8 @@ section {
 .move-notation {
     font-size: 4rem;
     font-weight: 900;
-    color: rgba(0,0,0,0.05);
+    color: var(--foreground);
+    opacity: 0.05;
     line-height: 1;
     text-align: right;
     user-select: none;
@@ -621,7 +701,7 @@ section {
 
 .timeline-card {
     background-color: var(--bg);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     padding: 32px;
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -652,7 +732,7 @@ section {
 
 .timeline-card p {
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 24px;
 }
 
@@ -704,8 +784,8 @@ section {
 .filter-btn {
     padding: 10px 24px;
     background: var(--bg2);
-    border: 1px solid rgba(0,0,0,0.05);
-    color: var(--muted);
+    border: 1px solid var(--border);
+    color: var(--muted-legacy);
     border-radius: 30px;
     cursor: pointer;
     font-size: 0.85rem;
@@ -716,7 +796,7 @@ section {
 .filter-btn:hover,
 .filter-btn.active {
     background-color: var(--text);
-    color: white;
+    color: var(--background);
     border-color: var(--text);
 }
 
@@ -727,14 +807,14 @@ section {
 }
 
 .skill-card {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(var(--background-rgb), 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 32px 20px;
     border-radius: 24px;
     text-align: center;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
 }
@@ -774,7 +854,7 @@ section {
 .skill-cat {
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--muted);
+    color: var(--muted-legacy);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -857,7 +937,7 @@ section {
     height: 100%;
     backface-visibility: hidden;
     background-color: var(--bg);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     border-radius: 32px;
     padding: 40px;
     display: flex;
@@ -927,18 +1007,18 @@ section {
 
 .project-type {
     font-size: 12px;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 16px;
 }
 
 .flip-hint {
     font-size: 11px;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 .project-desc {
     font-size: 13px;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 20px;
 }
 
@@ -1017,7 +1097,7 @@ section {
 
 .hw-diagram {
     background-color: var(--bg2);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     color: var(--text);
     padding: 32px;
     border-radius: 24px;
@@ -1062,7 +1142,7 @@ section {
     border-left: 3px solid var(--teal);
     padding: 10px 24px;
     font-style: italic;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-bottom: 40px;
     line-height: 1.8;
 }
@@ -1084,7 +1164,7 @@ section {
 
 .ctf-card {
     background-color: var(--bg);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     padding: 24px;
     border-radius: 20px;
     display: flex;
@@ -1112,7 +1192,7 @@ section {
 
 .ctf-year {
     font-size: 11px;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 .ctf-link-text {
@@ -1184,7 +1264,8 @@ section {
 .result {
     font-size: 8rem;
     font-weight: 900;
-    color: rgba(0,0,0,0.03);
+    color: var(--foreground);
+    opacity: 0.03;
     line-height: 1;
     margin-bottom: -40px;
     user-select: none;
@@ -1200,7 +1281,7 @@ section {
 
 .contact-header p {
     font-size: 1.1rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 .contact-grid {
@@ -1213,7 +1294,7 @@ section {
 
 .contact-card {
     background-color: var(--bg2);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
     padding: 40px 20px;
     border-radius: 24px;
     text-decoration: none;
@@ -1243,17 +1324,17 @@ section {
 
 .contact-card p {
     font-size: 13px;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 .community-row {
     font-size: 13px;
-    color: var(--muted);
+    color: var(--muted-legacy);
     margin-top: 20px;
 }
 
 .community-row a {
-    color: var(--muted);
+    color: var(--muted-legacy);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1272,7 +1353,7 @@ section {
 /* Footer */
 #footer {
     background-color: var(--bg);
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid var(--border);
     padding: 60px 24px;
     position: relative;
     overflow: hidden;
@@ -1308,7 +1389,7 @@ section {
 
 .footer-tagline {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     max-width: 300px;
     line-height: 1.6;
 }
@@ -1332,7 +1413,7 @@ section {
 
 .footer-links a {
     text-decoration: none;
-    color: var(--muted);
+    color: var(--muted-legacy);
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
@@ -1367,20 +1448,20 @@ section {
 
 .footer-location {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
 }
 
 .footer-bottom {
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 32px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid var(--border);
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.8rem;
-    color: var(--muted);
+    color: var(--muted-legacy);
     opacity: 0.7;
 }
 
@@ -1447,7 +1528,7 @@ section {
 
 .loader-content p {
     font-size: 14px;
-    color: var(--muted);
+    color: var(--muted-legacy);
     letter-spacing: 2px;
 }
 
@@ -1466,4 +1547,4 @@ section {
 /* Helper Classes */
 .cyan { color: var(--cyan); }
 .teal { color: var(--teal); }
-.muted { color: var(--muted); }
+.muted { color: var(--muted-legacy); }
