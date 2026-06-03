@@ -129,7 +129,6 @@ const jsonLd = {
       sameAs: [
         "https://github.com/0xlightning",
         "https://linkedin.com/in/kspraveen20",
-        "https://twitter.com/0xlightning",
       ],
       knowsAbout: [
         "React.js",

@@ -49,7 +49,6 @@ export function Hero() {
           </div>
 
           <div className="flex items-center gap-6 text-sm font-bold text-muted-foreground">
-            <Link href="https://twitter.com/0xlightning" className="hover:text-foreground transition-colors" target="_blank">𝕏</Link>
             <Link href="https://linkedin.com/in/kspraveen20" className="hover:text-foreground transition-colors" target="_blank">LN</Link>
             <Link href="https://github.com/0xlightning" className="hover:text-foreground transition-colors" target="_blank">GH</Link>
             <Link href="mailto:praveenresearcher14@gmail.com" className="hover:text-foreground transition-colors">✉</Link>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Code, Briefcase, MessageCircle, Send } from "lucide-react";
+import { Mail, Code, Briefcase } from "lucide-react";
 import Image from "next/image";
 
 export function Contact() {
@@ -8,8 +8,6 @@ export function Contact() {
     { icon: <Mail />, title: "Email", info: "praveenresearcher14@gmail.com", href: "mailto:praveenresearcher14@gmail.com" },
     { icon: <Code />, title: "GitHub", info: "@0xlightning", href: "https://github.com/0xlightning" },
     { icon: <Briefcase />, title: "LinkedIn", info: "Praveen KS", href: "https://linkedin.com/in/kspraveen20" },
-    { icon: <MessageCircle />, title: "X / Twitter", info: "@0xlightning", href: "https://twitter.com/0xlightning" },
-    { icon: <Send />, title: "Telegram", info: "@0xlightning", href: "https://t.me/0xlightning" },
   ];
 
   const orgs = [
@@ -43,7 +41,7 @@ export function Contact() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-20">
           {contacts.map((contact, i) => (
             <a
               key={i}
