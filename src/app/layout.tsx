@@ -17,39 +17,216 @@ const firaCode = Fira_Code({
   display: "swap",
 });
 
+const siteUrl = "https://0xlightning.github.io";
+
 export const metadata: Metadata = {
-  title: "Praveen KS (0xlightning) — Full Stack Developer",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Praveen KS — Full Stack Developer | React, Next.js, Node.js",
+    template: "%s | Praveen KS",
+  },
   description:
-    "Full Stack Developer with 2+ years of experience building scalable SaaS platforms, eCommerce solutions, and real-time web applications using React.js, Next.js, Node.js, TypeScript, MongoDB, and Firebase.",
+    "Full Stack Developer with 2+ years of experience building scalable SaaS platforms, eCommerce solutions, and real-time web applications. Expert in React.js, Next.js, Node.js, TypeScript, MongoDB, PostgreSQL, Firebase, and AI integration. Based in Salem, Tamil Nadu.",
   keywords: [
     "Full Stack Developer",
-    "React.js",
-    "Next.js",
-    "Node.js",
+    "React.js Developer",
+    "Next.js Developer",
+    "Node.js Developer",
     "TypeScript",
-    "SaaS",
-    "Firebase",
+    "SaaS Developer",
+    "Firebase Developer",
     "MongoDB",
+    "Shopify Developer",
+    "WhatsApp Business API",
+    "AI Integration",
+    "LLM Orchestration",
+    "IoT Developer",
     "Praveen KS",
     "0xlightning",
+    "Salem Tamil Nadu",
+    "Coimbatore Developer",
+    "Active Theory",
+    "Freelance Developer India",
   ],
-  authors: [{ name: "Praveen KS", url: "https://github.com/0xlightning" }],
+  authors: [{ name: "Praveen KS", url: siteUrl }],
+  creator: "Praveen KS",
+  publisher: "Praveen KS",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: "Praveen KS — Full Stack Developer",
-    description:
-      "Architecting scalable SaaS platforms, eCommerce solutions & real-time web applications. 2+ years of production experience.",
-    url: "https://0xlightning.github.io",
-    siteName: "0xlightning Portfolio",
-    locale: "en_US",
     type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Praveen KS Portfolio",
+    title: "Praveen KS — Full Stack Developer | React, Next.js, Node.js",
+    description:
+      "Full Stack Developer with 2+ years of experience. Building scalable SaaS, eCommerce & real-time apps. Reduced cart abandonment 30%, cut dev time 40–75% with AI tools. MVP delivery in 4–7 days.",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Praveen KS — Full Stack Developer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Praveen KS — Full Stack Developer",
-    description:
-      "Architecting scalable SaaS platforms, eCommerce solutions & real-time web applications.",
+    site: "@0xlightning",
     creator: "@0xlightning",
+    title: "Praveen KS — Full Stack Developer | React, Next.js, Node.js",
+    description:
+      "Full Stack Developer. SaaS · eCommerce · IoT · AI Integration. MVP in 4–7 days. Based in Salem, Tamil Nadu.",
+    images: [`${siteUrl}/og-image.png`],
   },
+  verification: {
+    google: "",
+  },
+  category: "technology",
+};
+
+// JSON-LD Structured Data — Person + WebSite + WebPage (SEO + AEO + GEO)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Praveen KS",
+      alternateName: "0xlightning",
+      url: siteUrl,
+      jobTitle: "Full Stack Developer",
+      worksFor: {
+        "@type": "Organization",
+        name: "Active Theory",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Coimbatore",
+          addressRegion: "Tamil Nadu",
+          addressCountry: "IN",
+        },
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Salem",
+        addressRegion: "Tamil Nadu",
+        addressCountry: "IN",
+      },
+      email: "praveenresearcher14@gmail.com",
+      telephone: "+919025100335",
+      sameAs: [
+        "https://github.com/0xlightning",
+        "https://linkedin.com/in/kspraveen20",
+        "https://twitter.com/0xlightning",
+      ],
+      knowsAbout: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "MongoDB",
+        "PostgreSQL",
+        "Firebase",
+        "SaaS Development",
+        "eCommerce Development",
+        "Shopify",
+        "WhatsApp Business API",
+        "AI Integration",
+        "LLM Orchestration",
+        "IoT Systems",
+        "REST API Development",
+        "JWT Authentication",
+        "OAuth 2.0",
+        "Role-Based Access Control",
+        "WebSocket",
+        "Docker",
+        "CI/CD",
+      ],
+      description:
+        "Full Stack Developer with 2+ years of experience building scalable SaaS platforms, eCommerce solutions, and real-time web applications using React.js, Next.js, Node.js, TypeScript, MongoDB, PostgreSQL, and Firebase.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Praveen KS — Full Stack Developer Portfolio",
+      description:
+        "Portfolio of Praveen KS, a Full Stack Developer specialising in SaaS, eCommerce, and AI-integrated web applications.",
+      author: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#webpage`,
+      url: siteUrl,
+      name: "Praveen KS — Full Stack Developer | React, Next.js, Node.js",
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#person` },
+      description:
+        "Portfolio showcasing full-stack projects, technical skills, and professional experience across SaaS, eCommerce, and IoT domains.",
+      inLanguage: "en-US",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What technologies does Praveen KS specialise in?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Praveen KS specialises in React.js, Next.js, Node.js, TypeScript, MongoDB, PostgreSQL, Firebase, Shopify, and AI/LLM integration. He has 2+ years of full-stack development experience.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How quickly can Praveen KS deliver an MVP?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Praveen KS delivers production-ready MVPs in 4–7 days, using AI boilerplate generation and agile sprints.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What industries has Praveen KS worked in?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Praveen KS has built full-stack systems across SaaS, eCommerce (Shopify), IoT dashboards, and AI-integrated internal tools.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Praveen KS available for freelance work?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Praveen KS is open to freelance projects and collaborations. You can contact him at praveenresearcher14@gmail.com.",
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -59,13 +236,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        {/* JSON-LD Structured Data for SEO / AEO / GEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${firaCode.variable} font-sans antialiased relative min-h-screen flex flex-col`}
       >
         <div className="fixed inset-0 z-[-1] opacity-[0.025] pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
