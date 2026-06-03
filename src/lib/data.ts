@@ -2,9 +2,51 @@ export const timelineData = [
   {
     notation: "O-O",
     period: "Feb 2024 – Present",
+    type: "Full-time",
     title: "Full Stack Developer — Active Theory, Coimbatore",
     description: "Designed and developed full-stack web applications across SaaS, eCommerce, and IoT domains. Architected multi-tenant SaaS platforms with Next.js SSR, Firebase Auth, MongoDB, and RBAC optimized for SEO performance and scalability. Developed custom Shopify themes and built Node.js middleware for real-time Shopify–Zoho CRM synchronization. Implemented WhatsApp Business API, reducing cart abandonment by 30%. Built real-time IoT dashboards and integrated AI development tools into engineering workflows, reducing build time by 40–75%.",
     skills: ["React.js", "Next.js", "Node.js", "MongoDB", "Shopify Liquid", "IoT", "AI Integration"]
+  },
+  {
+    notation: "Nf3",
+    period: "Jul 2023 – Oct 2023 · 4 mos",
+    type: "Internship",
+    title: "Data Science Intern — Shiash Info Solutions Pvt. Ltd., Chennai",
+    description: "Proficient in Python operators, List Comprehension, and mapping techniques. Built strong foundations in NumPy and Pandas. Applied data cleaning, supervised and unsupervised learning techniques (SVM, KNN), Feature Engineering, skewness analysis, and data visualization. Final project: Commercial Sales Prediction using multiple regression models in a unified pipeline. Operated in Agile/Scrum culture with daily mentor reporting.",
+    skills: ["Python", "NumPy", "Pandas", "Machine Learning", "SVM", "KNN", "Data Visualization", "Agile/Scrum"]
+  },
+  {
+    notation: "Bc4",
+    period: "Jan 2021 – Feb 2023 · 2 yrs 2 mos",
+    type: "Freelance",
+    title: "Security Researcher — Synack Red Team",
+    description: "Conducted vulnerability assessments and penetration testing across client targets as part of the elite Synack Red Team. Identified and responsibly disclosed security vulnerabilities through structured bug bounty and private security research programs.",
+    skills: ["Penetration Testing", "Networking", "Vulnerability Assessment", "Responsible Disclosure"]
+  },
+  {
+    notation: "e4",
+    period: "Jul 2020 – Feb 2023 · 2 yrs 8 mos",
+    type: "Achievement",
+    title: "CTF Player (Elite Hacker) — Hack The Box",
+    description: "Achieved Elite Hacker rank on Hack The Box, completing advanced CTF challenges across web exploitation, reverse engineering, cryptography, and network security. Profile: hackthebox.com/profile/334208",
+    link: "https://app.hackthebox.com/profile/334208",
+    skills: ["Penetration Testing", "CTF", "Web Exploitation", "Reverse Engineering", "Cryptography", "Networking"]
+  },
+  {
+    notation: "d4",
+    period: "Sep 2019 – Feb 2023 · 3 yrs 6 mos",
+    type: "Part-time",
+    title: "Security Researcher — Bugcrowd",
+    description: "Participated in public and private bug bounty programs on Bugcrowd. Identified, documented, and reported security vulnerabilities across web applications and APIs for various organisations over 3+ years.",
+    skills: ["Networking", "Penetration Testing", "Bug Bounty", "Web Security"]
+  },
+  {
+    notation: "a3",
+    period: "Jan 2020 – Feb 2020 · 2 mos",
+    type: "Internship",
+    title: "Ethical Hacking & Penetration Testing — Razz Security, Chennai",
+    description: "Completed an intensive internship covering ethical hacking methodologies, network penetration testing, and cybersecurity fundamentals. Gained hands-on experience with industry-standard tools and techniques under professional mentorship.",
+    skills: ["Cybersecurity", "Networking", "Penetration Testing", "Ethical Hacking"]
   }
 ];
 
