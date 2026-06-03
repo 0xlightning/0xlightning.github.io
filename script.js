@@ -123,6 +123,29 @@ projectCards.forEach(card => {
     });
 });
 
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark');
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark');
+
+        // Save preference
+        if (body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+
 // GSAP Animations
 if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
