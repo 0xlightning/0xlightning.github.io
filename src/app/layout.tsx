@@ -236,7 +236,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
         {/* JSON-LD Structured Data for SEO / AEO / GEO */}
         <script
           type="application/ld+json"
