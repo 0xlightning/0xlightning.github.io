@@ -116,7 +116,7 @@ export const projectsData = [
     name: "eCommerce Platform with Automation Suite",
     type: "eCommerce · Automation",
     desc: "Built a full eCommerce platform with custom Shopify theme development, optimized checkout flows, and dynamic product filtering. Implemented WhatsApp Business API for abandoned cart recovery, order notifications, and customer support — reducing cart abandonment by 30%.",
-    thumb: "/assets/projects/ecommerce.svg",
+    thumb: "/assets/projects/ecommerce.png",
     tech: ["Shopify (Liquid)", "WhatsApp Business API (Wati)"],
     link: "https://github.com/0xlightning"
   },

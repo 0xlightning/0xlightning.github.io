@@ -50,7 +50,7 @@ export function Navbar() {
       }`}
     >
       <Link href="#hero" className="flex items-center gap-2 font-bold text-lg text-foreground hover:opacity-80 transition-opacity">
-        <span>♟</span>
+        <img src="/favicon.png" alt="Logo" width={24} height={24} className="rounded-sm" />
         <span className="tracking-tight">0xlightning</span>
       </Link>
 
