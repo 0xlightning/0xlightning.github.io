@@ -1,11 +1,12 @@
+"use client";
 import Link from "next/link";
 
 export function Footer() {
   return (
     <footer id="footer" className="relative mt-24 border-t border-border bg-background pt-16 pb-8 overflow-hidden">
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2 font-bold text-xl tracking-tight text-foreground">
               <span className="text-2xl">♟</span>
@@ -21,17 +22,34 @@ export function Footer() {
             <ul className="flex flex-col gap-2">
               {["About", "Projects", "Timeline", "Contact"].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={`#${item.toLowerCase()}`}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {item}
-                  </Link>
+                  {item === "CTF-Players" ? (
+                    <Link href="/CTF-Players" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {item}
+                    </Link>
+                  ) : (
+                    <button onClick={() => {
+                      const el = document.getElementById(item.toLowerCase());
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {item}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
 
+          <div className="flex flex-col gap-4">
+            <h4 className="font-semibold text-foreground uppercase tracking-wider text-sm">Pages</h4>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
+              </li>
+              <li>
+                <Link href="/CTF-Players" className="text-sm text-muted-foreground hover:text-foreground transition-colors">CTF-Players</Link>
+              </li>
+            </ul>
+          </div>
           <div className="flex flex-col gap-4">
             <h4 className="font-semibold text-foreground uppercase tracking-wider text-sm">Status</h4>
             <div className="flex items-center gap-2">
@@ -53,7 +71,7 @@ export function Footer() {
           </p>
         </div>
       </div>
-      
+
       {/* Animated bottom border line (Cyan highlight) */}
       <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent w-full opacity-50"></div>
     </footer>

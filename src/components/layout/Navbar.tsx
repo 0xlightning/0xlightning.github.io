@@ -12,12 +12,12 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Timeline", href: "#timeline" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "CTF", href: "#ctf" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "about" },
+    { name: "Timeline", href: "timeline" },
+    { name: "Skills", href: "skills" },
+    { name: "Projects", href: "projects" },
+    { name: "CTF", href: "ctf" },
+    { name: "Contact", href: "contact" },
   ];
 
   useEffect(() => {
@@ -49,30 +49,40 @@ export function Navbar() {
           : "top-5 w-[90%] max-w-6xl h-16 rounded-[2rem] bg-background/60"
       }`}
     >
-      <Link href="#hero" className="flex items-center gap-2 font-bold text-lg text-foreground hover:opacity-80 transition-opacity">
+      <button
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        className="flex items-center gap-2 font-bold text-lg text-foreground hover:opacity-80 transition-opacity"
+      >
         <img src="/favicon.png" alt="Logo" width={24} height={24} className="rounded-sm" />
         <span className="tracking-tight">0xlightning</span>
-      </Link>
+      </button>
 
       {/* Desktop Links */}
       <ul className="hidden md:flex items-center gap-8">
-        {navLinks.map((link) => (
-          <li key={link.name}>
-            <Link
-              href={link.href}
-              className={`text-sm font-medium transition-colors relative py-1 ${
-                activeSection === link.href.substring(1)
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.name}
-              {activeSection === link.href.substring(1) && (
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
-              )}
-            </Link>
-          </li>
-        ))}
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <button
+                onClick={() => {
+                  const el = document.getElementById(link.href);
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className={`text-sm font-medium transition-colors relative py-1 ${
+                  activeSection === link.href
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.name}
+                {activeSection === link.href && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+                )}
+              </button>
+            </li>
+          ))}
       </ul>
 
       <div className="flex items-center gap-4">
@@ -95,18 +105,21 @@ export function Navbar() {
         }`}
       >
         {navLinks.map((link) => (
-          <Link
+          <button
             key={link.name}
-            href={link.href}
-            onClick={() => setMobileMenuOpen(false)}
-            className={`text-base font-medium p-2 rounded-lg transition-colors ${
-              activeSection === link.href.substring(1)
+            onClick={() => {
+              const el = document.getElementById(link.href);
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+              setMobileMenuOpen(false);
+            }}
+            className={`text-base font-medium p-2 rounded-lg transition-colors text-left ${
+              activeSection === link.href
                 ? "bg-muted text-foreground"
                 : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
             }`}
           >
             {link.name}
-          </Link>
+          </button>
         ))}
       </div>
     </nav>

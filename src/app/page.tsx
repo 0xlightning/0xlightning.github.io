@@ -15,6 +15,7 @@ import Lenis from "lenis";
 
 export default function Home() {
   const container = useRef(null);
+  const lenisRef = useRef<any>(null);
 
   useEffect(() => {
     // 1. Initialize Lenis Smooth Scroll
@@ -27,6 +28,7 @@ export default function Home() {
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
+    lenisRef.current = lenis;
 
     lenis.on('scroll', ScrollTrigger.update);
 
@@ -113,10 +115,33 @@ export default function Home() {
             
     }, container);
 
+    // Helper to scroll to target element based on hash (supports multiple # fragments)
+    const handleHash = () => {
+      if (typeof window === 'undefined') return;
+      const hash = window.location.hash;
+      if (!hash) return;
+      const parts = hash.split('#').filter(Boolean); // remove empty parts
+      const targetId = parts[parts.length - 1]; // use last part as the id
+      const targetEl = document.getElementById(targetId);
+      if (targetEl && lenisRef.current) {
+        lenisRef.current.scrollTo(targetEl, { offset: -80 });
+      }
+    };
+
+    // Initial hash handling after Lenis is ready
+    handleHash();
+
+    // Listen for hash changes (e.g., when navbar links are clicked)
+    const handleHashChange = () => {
+      handleHash();
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
     return () => {
       ctx.revert();
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
+      window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
