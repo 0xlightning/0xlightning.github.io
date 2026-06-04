@@ -6,6 +6,7 @@ import { About } from "@/components/sections/About";
 import { Timeline } from "@/components/sections/Timeline";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
+import { Ctf } from "@/components/sections/Ctf";
 import { Contact } from "@/components/sections/Contact";
 
 import gsap from "gsap";
@@ -126,6 +127,7 @@ export default function Home() {
       <Timeline />
       <Skills />
       <Projects />
+      <Ctf />
       <Contact />
     </div>
   );

@@ -16,6 +16,7 @@ export function Navbar() {
     { name: "Timeline", href: "#timeline" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "CTF", href: "#ctf" },
     { name: "Contact", href: "#contact" },
   ];
 

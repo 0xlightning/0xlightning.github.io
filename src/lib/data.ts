@@ -138,4 +138,9 @@ export const projectsData = [
   }
 ];
 
-export const ctfData = [];
+export const ctfData = [
+  { name: "DAM CTF", year: "2020", url: "https://0xlightning.github.io/CTF-Players/2020/DAMCTF" },
+  { name: "DARK CTF", year: "2020", url: "https://0xlightning.github.io/CTF-Players/2020/DARKCTF" },
+  { name: "DownUnder CTF", year: "2020", url: "https://0xlightning.github.io/CTF-Players/2020/DownUnderCTF" },
+  { name: "Syskron CTF", year: "2020", url: "https://0xlightning.github.io/CTF-Players/2020/Syskron%20Security%20CTF" }
+];
